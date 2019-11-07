@@ -16,15 +16,15 @@ import java.net.UnknownHostException;
 /**
  * Created by hyhong Administrator on 2019/10/12.
  */
-@Configuration
-@ConditionalOnClass(RedisOperations.class)
+/*@Configuration
+@ConditionalOnClass(RedisOperations.class)*/
 //@EnableConfigurationProperties(RedisProperties.class)
 public class RedisConfig {
     @Bean
     @ConditionalOnMissingBean(name = "redisTemplate")
     public RedisTemplate<Object, Object> redisTemplate(
             RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
-        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        RedisTemplate<Object, Object> template = new RedisTemplate<Object, Object>();
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }

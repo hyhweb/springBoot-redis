@@ -21,8 +21,9 @@ public class RedisService {
     public void hello(){
        // redisTemplate.setKeySerializer(new StringRedisSerializer());
         ValueOperations ops = redisTemplate.opsForValue();
-        ops.set("name", "hong111");
-        Object o = ops.get("name");
+        ops.set("name", "webhong111");
+        ops.set("name1", "webhong111");
+        Object o = ops.get("name1");
         System.out.println(o);
     }
     public void hello2() {
