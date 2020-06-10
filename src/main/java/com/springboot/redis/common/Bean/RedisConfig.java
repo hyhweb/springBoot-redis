@@ -28,6 +28,7 @@ public class RedisConfig {
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
+
     @Bean
     @ConditionalOnMissingBean
     public StringRedisTemplate stringRedisTemplate(

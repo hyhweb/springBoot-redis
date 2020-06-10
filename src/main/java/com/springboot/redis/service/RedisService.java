@@ -18,17 +18,18 @@ public class RedisService {
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 
-    public void hello(){
-       // redisTemplate.setKeySerializer(new StringRedisSerializer());
+    public void hello() {
+        // redisTemplate.setKeySerializer(new StringRedisSerializer());
         ValueOperations ops = redisTemplate.opsForValue();
         ops.set("name", "webhong111");
         ops.set("name1", "webhong111");
         Object o = ops.get("name1");
         System.out.println(o);
     }
+
     public void hello2() {
         ValueOperations ops = stringRedisTemplate.opsForValue();
-        ops.set("sex","box-girl222");
+        ops.set("sex", "box-girl222");
         Object o = ops.get("sex");
         System.out.println(o);
     }

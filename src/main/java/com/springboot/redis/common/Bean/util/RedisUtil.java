@@ -17,6 +17,7 @@ public class RedisUtil {
     private RedisTemplate<String, Object> redisTemplate;
 
     // =============================common============================
+
     /**
      * 指定缓存失效时间
      *
@@ -541,21 +542,21 @@ public class RedisUtil {
         }
     }
 
-  /**
-   * 移除N个值为value
-   *
-   * @param key 键
-   * @param count 移除多少个
-   * @param value 值
-   * @return 移除的个数
-   */
-  public long lRemove(String key, long count, Object value) {
-    try {
-      Long remove = redisTemplate.opsForList().remove(key, count, value);
-      return remove;
-    } catch (Exception e) {
-      e.printStackTrace();
-      return 0;
+    /**
+     * 移除N个值为value
+     *
+     * @param key   键
+     * @param count 移除多少个
+     * @param value 值
+     * @return 移除的个数
+     */
+    public long lRemove(String key, long count, Object value) {
+        try {
+            Long remove = redisTemplate.opsForList().remove(key, count, value);
+            return remove;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
-}
 }
